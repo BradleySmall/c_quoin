@@ -9,7 +9,7 @@ SRCS=$(wildcard *.c)
 BIN=$(shell grep -l main *.c* | cut -d'.' -f1).bin
 
 OBJS = $(SRCS:.c=.o)
-CFLAGS = -g -Wall -Wextra
+CFLAGS = -std='c11' -g -Wall -Wextra
 
 all : $(BIN)
 
