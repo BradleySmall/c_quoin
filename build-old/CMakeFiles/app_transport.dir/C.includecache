@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bms/src/c_quoin/menu.c
+stdio.h
+-
+
+/home/bms/src/c_quoin/pass.c
+pass.h
+/home/bms/src/c_quoin/pass.h
+stdio.h
+-
+
+/home/bms/src/c_quoin/pass.h
+time.h
+-
+stdbool.h
+-
+user.h
+/home/bms/src/c_quoin/user.h
+term.h
+/home/bms/src/c_quoin/term.h
+trans.h
+/home/bms/src/c_quoin/trans.h
+
+/home/bms/src/c_quoin/term.h
+
+/home/bms/src/c_quoin/trans.c
+trans.h
+/home/bms/src/c_quoin/trans.h
+time.h
+-
+
+/home/bms/src/c_quoin/trans.h
+user.h
+/home/bms/src/c_quoin/user.h
+
+/home/bms/src/c_quoin/user.h
+

@@ -1,0 +1,68 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+APP_TRANSPORT_H	src/app_transport.h	8;"	d
+Buy_A_Pass	src/app_transport.c	/^void Buy_A_Pass(void) {$/;"	f
+Check_A_Pass	src/app_transport.c	/^void Check_A_Pass(void) {$/;"	f
+DOM_Discount	src/trans.c	/^static float DOM_Discount[31] = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,$/;"	v	file:
+DOW_Discounts	src/trans.c	/^static float DOW_Discounts[7] = {0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75};$/;"	v	file:
+MENU_H	src/menu.h	8;"	d
+Menu_Prompt_Char	src/menu.c	/^char Menu_Prompt_Char(const char *title, const char *choices, const char begin,$/;"	f
+Menu_Prompt_Int	src/menu.c	/^int Menu_Prompt_Int(const char *title) {$/;"	f
+PASS_H	src/pass.h	10;"	d
+Pass	src/pass.h	/^} Pass;$/;"	t	typeref:struct:Transport_Pass
+Pass_Buy	src/pass.c	/^int Pass_Buy(Pass *pass, const UserType user, const TermType term,$/;"	f
+Pass_Check	src/pass.c	/^int Pass_Check(const Pass *pass) { return pass->balance; }$/;"	f
+Pass_Use	src/pass.c	/^bool Pass_Use(Pass *pass, const TransType trans) {$/;"	f
+TERMTYPE_MONTHLY	src/term.h	/^	TERMTYPE_MONTHLY$/;"	e	enum:_TermType
+TERMTYPE_PERRIDE	src/term.h	/^	TERMTYPE_PERRIDE ,$/;"	e	enum:_TermType
+TERMTYPE_WORKER	src/term.h	/^	TERMTYPE_WORKER  = 0,$/;"	e	enum:_TermType
+TERM_H	src/term.h	9;"	d
+TRANSTYPE_BUS	src/trans.h	/^	TRANSTYPE_BUS = 1,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_BUS_ELDERLYBUS = 9,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_RAIL	src/trans.h	/^	TRANSTYPE_BUS_RAIL = 5,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_RAIL_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_BUS_RAIL_ELDERLYBUS = 13,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_SUBWAY	src/trans.h	/^	TRANSTYPE_BUS_SUBWAY = 3,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_SUBWAY_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_BUS_SUBWAY_ELDERLYBUS = 11,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_SUBWAY_RAIL	src/trans.h	/^	TRANSTYPE_BUS_SUBWAY_RAIL = 7,$/;"	e	enum:_TransType
+TRANSTYPE_BUS_SUBWAY_RAIL_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_BUS_SUBWAY_RAIL_ELDERLYBUS = 15$/;"	e	enum:_TransType
+TRANSTYPE_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_ELDERLYBUS = 8,$/;"	e	enum:_TransType
+TRANSTYPE_RAIL	src/trans.h	/^	TRANSTYPE_RAIL = 4,$/;"	e	enum:_TransType
+TRANSTYPE_RAIL_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_RAIL_ELDERLYBUS = 12,$/;"	e	enum:_TransType
+TRANSTYPE_SUBWAY	src/trans.h	/^	TRANSTYPE_SUBWAY = 2,$/;"	e	enum:_TransType
+TRANSTYPE_SUBWAY_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_SUBWAY_ELDERLYBUS = 10,$/;"	e	enum:_TransType
+TRANSTYPE_SUBWAY_RAIL	src/trans.h	/^	TRANSTYPE_SUBWAY_RAIL = 6,$/;"	e	enum:_TransType
+TRANSTYPE_SUBWAY_RAIL_ELDERLYBUS	src/trans.h	/^	TRANSTYPE_SUBWAY_RAIL_ELDERLYBUS = 14,$/;"	e	enum:_TransType
+TRANSTYPE_WORKER	src/trans.h	/^	TRANSTYPE_WORKER = 0,$/;"	e	enum:_TransType
+TRANS_H	src/trans.h	19;"	d
+TermType	src/term.h	/^} TermType;$/;"	t	typeref:enum:_TermType
+TransType	src/trans.h	/^} TransType;$/;"	t	typeref:enum:_TransType
+Trans_Bases	src/trans.c	/^static int Trans_Bases[16] = {0,  10, 15, -1, 20, -1, -1, -1,$/;"	v	file:
+Trans_Month_Rate	src/trans.c	/^int Trans_Month_Rate(const TransType trans, const UserType user,$/;"	f
+Trans_Monthly	src/trans.c	/^static int Trans_Monthly[16] = {0,   200, 300, -1, 400, -1, -1, -1,$/;"	v	file:
+Trans_Ride_Rate	src/trans.c	/^int Trans_Ride_Rate(const TransType trans, const UserType user) {$/;"	f
+Transport_Pass	src/pass.h	/^typedef struct Transport_Pass {$/;"	s
+USERTYPE_ELDERLY	src/user.h	/^	USERTYPE_ELDERLY$/;"	e	enum:_UserType
+USERTYPE_STANDARD	src/user.h	/^	USERTYPE_STANDARD,$/;"	e	enum:_UserType
+USERTYPE_STUDENT	src/user.h	/^	USERTYPE_STUDENT,$/;"	e	enum:_UserType
+USERTYPE_WORKER	src/user.h	/^	USERTYPE_WORKER   = 0, $/;"	e	enum:_UserType
+USER_H	src/user.h	8;"	d
+Use_A_Pass	src/app_transport.c	/^void Use_A_Pass(void) {$/;"	f
+UserType	src/user.h	/^} UserType;$/;"	t	typeref:enum:_UserType
+User_Discounts	src/trans.c	/^static float User_Discounts[4] = {0, 1.0, 0.5, 0.5};$/;"	v	file:
+_TermType	src/term.h	/^typedef enum _TermType {$/;"	g
+_TransType	src/trans.h	/^typedef enum _TransType {$/;"	g
+_UserType	src/user.h	/^typedef enum _UserType {$/;"	g
+balance	src/pass.h	/^	int 		balance;$/;"	m	struct:Transport_Pass
+expires	src/pass.h	/^	time_t      expires;$/;"	m	struct:Transport_Pass
+get_next_id	src/pass.c	/^int get_next_id(void) {$/;"	f
+id	src/pass.h	/^	int 		id;$/;"	m	struct:Transport_Pass
+main	src/app_transport.c	/^int main(void) {$/;"	f
+passIndex	src/app_transport.c	/^static int passIndex = 0;$/;"	v	file:
+passes	src/app_transport.c	/^static Pass *passes[100] = {0};$/;"	v	file:
+term	src/pass.h	/^	TermType 	term;$/;"	m	struct:Transport_Pass
+trans	src/pass.h	/^	TransType 	trans;$/;"	m	struct:Transport_Pass
+user	src/pass.h	/^	UserType 	user;$/;"	m	struct:Transport_Pass

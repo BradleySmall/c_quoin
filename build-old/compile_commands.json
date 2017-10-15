@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/bms/src/c_quoin/build",
+  "command": "/usr/bin/cc   -std=c11 -Wall -I/home/bms/src/c_quoin    -o CMakeFiles/app_transport.dir/app_transport.c.o   -c /home/bms/src/c_quoin/app_transport.c",
+  "file": "/home/bms/src/c_quoin/app_transport.c"
+},
+{
+  "directory": "/home/bms/src/c_quoin/build",
+  "command": "/usr/bin/cc   -std=c11 -Wall -I/home/bms/src/c_quoin    -o CMakeFiles/app_transport.dir/menu.c.o   -c /home/bms/src/c_quoin/menu.c",
+  "file": "/home/bms/src/c_quoin/menu.c"
+},
+{
+  "directory": "/home/bms/src/c_quoin/build",
+  "command": "/usr/bin/cc   -std=c11 -Wall -I/home/bms/src/c_quoin    -o CMakeFiles/app_transport.dir/pass.c.o   -c /home/bms/src/c_quoin/pass.c",
+  "file": "/home/bms/src/c_quoin/pass.c"
+},
+{
+  "directory": "/home/bms/src/c_quoin/build",
+  "command": "/usr/bin/cc   -std=c11 -Wall -I/home/bms/src/c_quoin    -o CMakeFiles/app_transport.dir/trans.c.o   -c /home/bms/src/c_quoin/trans.c",
+  "file": "/home/bms/src/c_quoin/trans.c"
+}
+]

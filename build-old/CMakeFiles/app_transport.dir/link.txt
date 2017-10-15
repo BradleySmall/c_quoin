@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c11 -Wall    CMakeFiles/app_transport.dir/app_transport.c.o CMakeFiles/app_transport.dir/menu.c.o CMakeFiles/app_transport.dir/pass.c.o CMakeFiles/app_transport.dir/trans.c.o  -o ../bin/app_transport -rdynamic 
