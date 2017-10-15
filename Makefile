@@ -4,21 +4,76 @@
 ##
 ## Generic Makefile for development
 ##
-DEPS=$(wildcard Makefile *.h)
-SRCS=$(wildcard *.c)
-BIN=$(shell grep -l main *.c* | cut -d'.' -f1).bin
+.SECONDEXPANSION :
+.SECONDARY :
+.DELETE_ON_ERROR:
 
-OBJS = $(SRCS:.c=.o)
-CFLAGS = -std='c11' -g -Wall -Wextra
+DEPS=$(wildcard Makefile src/*.h)
+SRCS=$(wildcard src/*.c)
+PROJ=$(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
+OUTDIR=build
+SRCDIR=src
+RBINDIR := $(OUTDIR)/release/bin
+DBINDIR := $(OUTDIR)/debug/bin
+ROBJDIR := $(OUTDIR)/release/tmp/bin
+DOBJDIR := $(OUTDIR)/debug/tmp/bin
+ROBJS := $(SRCS:$(SRCDIR)/%.c=$(ROBJDIR)/%.o)
+DOBJS := $(SRCS:$(SRCDIR)/%.c=$(DOBJDIR)/%.o)
+CPPFLAGS = -I./$(SRCDIR)/
+# CC=clang
+# CFLAGS = -Weverything
+##############
+#Target Specific settings
+##############
+#debug : OBJDIR := $(DOBJDIR)
+#debug : OBJS := $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+debug : CFLAGS = -std='c11' -g3 -Wall -Wextra
+debug : BIN := $(RBINDIR)/$(PROJ)
+#release : OBJDIR := $(ROBJDIR)
+#release : OBJS := $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+release : CFLAGS = -std='c11' -O2 -Wall -Wextra
+release : BIN := $(DBINDIR)/$(PROJ)
+TIDY=/usr/bin/clang-tidy
 
-all : $(BIN)
+.PHONY : all debug release tidy
 
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS) 
 
-$(BIN) : $(OBJS)
-	$(CC) -o $@ $^ $(CFLAGS) 
+all : debug release
+
+%/ :
+	mkdir -p '$(@)'
+
+debug : $$(BIN) 
+
+release : $$(BIN) 
+
+tidy : $(SRCS) | compile_commands.json
+	$(TIDY) $^
+
+compile_commands.json : $(SRCS)
+	bear make 
+
+$(DOBJDIR)/%.o : $(SRCDIR)/%.c $(DEPS) | $$(@D)/
+	$(COMPILE.c) $(OUTPUT_OPTION) $< 
+
+$(ROBJDIR)/%.o : $(SRCDIR)/%.c $(DEPS) | $$(@D)/
+	$(COMPILE.c) $(OUTPUT_OPTION) $< 
+
+#$(OBJDIR)/%.o) : $(SRCDIR)/%.c $(DEPS) | $$(@D)/
+#	$(COMPILE.c) $(OUTPUT_OPTION) $< 
+#
+#%.o: %.c $(DEPS) | $$(@D)/
+#	$(COMPILE.c) $(OUTPUT_OPTION) $< 
+#
+#$(BIN) : $(OBJS) | $$(@D)/
+#	$(LINK.c) $(OUTPUT_OPTION) $^
+
+$(DBINDIR)/$(PROJ) : $(DOBJS) | $$(@D)/
+	$(LINK.c) $(OUTPUT_OPTION) $^
+	
+$(RBINDIR)/$(PROJ) : $(ROBJS) | $$(@D)/
+	$(LINK.c) $(OUTPUT_OPTION) $^
 
 clean :
-	rm -rf $(OBJS) $(BIN) *~
+	$(RM) -r $(OUTDIR) compile_commands.json
 
