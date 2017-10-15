@@ -17,7 +17,7 @@
 int Menu_Prompt_Int(const char *title) {
     int entry = -1;
     int retval = 0;
-    char c = '\0';
+    int c = '\0';
 
     while (entry < 0) {
         puts(title);
@@ -27,7 +27,7 @@ int Menu_Prompt_Int(const char *title) {
             entry = -1;
         } else {
             do {
-                c = (char)getchar();
+                c = getchar();
             } while (c != '\n' && c != EOF);
         }
     }
@@ -42,15 +42,15 @@ int Menu_Prompt_Int(const char *title) {
  */
 char Menu_Prompt_Char(const char *title, const char *choices, const char begin,
                       const char end) {
-    char entry = begin - 1;
-    char c = '\0';
+    int entry = begin - 1;
+    int c = '\0';
 
     while (entry < begin || entry > end) {
         puts(title);
         puts(choices);
-        c = entry = (char) getchar();
+        c = entry = getchar();
         while (c != '\n' && c != EOF) {
-            c = (char)getchar();
+            c = getchar();
         }
     }
 
