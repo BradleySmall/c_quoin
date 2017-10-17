@@ -6,6 +6,8 @@
  */
 #include "menu.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* Displays a title and waits for the user to enter a number.
  * Then clears stdin of all remaining characters including the
@@ -18,10 +20,12 @@ int Menu_Prompt_Int(const char *title) {
     int entry = -1;
     int retval = 0;
     int c = '\0';
+    char line[2] = "";
 
     while (entry < 0) {
         puts(title);
-        retval = scanf("%d", &entry);
+        fgets(line, sizeof line, stdin);
+        retval = strtol(line, NULL, 10);
 
         if (retval == EOF) {
             entry = -1;
