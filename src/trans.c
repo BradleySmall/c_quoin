@@ -41,7 +41,7 @@ static float DOW_Discounts[7] = {0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75};
  * -1 indicates a currently unused value
  *    it would be useful for future expansion
  * */
-int Trans_Ride_Rate(const TransType trans, const UserType user) {
+int Trans_Ride_Rate(TransType const trans, UserType const user) {
     int base = Trans_Bases[trans];
     float usr_disc = User_Discounts[user];
 
@@ -63,8 +63,8 @@ int Trans_Ride_Rate(const TransType trans, const UserType user) {
  * -1 indicates a currently unused value
  *    it would be useful for future expansion
  * */
-int Trans_Month_Rate(const TransType trans, const UserType user,
-                     const int dom) {
+int Trans_Month_Rate(TransType const trans, UserType const user,
+                     int const dom) {
     int base = Trans_Monthly[trans];
     float usr_disc = User_Discounts[user];
     float dom_disc = DOM_Discount[dom];

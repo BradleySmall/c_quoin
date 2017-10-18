@@ -20,18 +20,18 @@ DOBJDIR := $(OUTDIR)/debug/tmp/bin
 ROBJS := $(SRCS:$(SRCDIR)/%.c=$(ROBJDIR)/%.o)
 DOBJS := $(SRCS:$(SRCDIR)/%.c=$(DOBJDIR)/%.o)
 CPPFLAGS = -I./$(SRCDIR)/
-# CC=clang
-# CFLAGS = -Weverything
+#CC=clang-6.0
+#CFLAGS = -Weverything -O2
 ##############
 #Target Specific settings
 ##############
 debug   : OBJDIR = $(DOBJDIR)
 debug   : OBJS   = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-debug   : CFLAGS = -std='c11' -g3 -Wall -Wextra
+debug   : CFLAGS += -std='c11' -g3 -Wall -Wextra
 debug   : BIN    = $(DBINDIR)/$(PROJ)
 release : OBJDIR = $(ROBJDIR)
 release : OBJS   = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-release : CFLAGS = -std='c11' -O2 -Wall -Wextra
+release : CFLAGS += -std='c11' -O2 -Wall -Wextra
 release : BIN    = $(RBINDIR)/$(PROJ)
 
 TIDY=/usr/bin/clang-tidy

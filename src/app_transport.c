@@ -105,7 +105,7 @@ void Buy_A_Pass(void) {
     int dom = 0;
 
     /* get user type */
-    char entry = Menu_Prompt_Char(
+    int entry = Menu_Prompt_Char(
         "What type of user?",
         "(1) Standard, (2) Student, (3) Elderly, (0) Worker", '0', '3');
     switch (entry) {
@@ -222,7 +222,7 @@ void Buy_A_Pass(void) {
 void Use_A_Pass(void) {
     /* determine the trans (portation) type to be used */
     TransType trans = {0};
-    char entry = Menu_Prompt_Char(
+    int entry = Menu_Prompt_Char(
         "What type of trans?", "(1) Bus, (2) Subway, (3) Rail, (4) Elderly Bus",
         '1', '4');
     switch (entry) {

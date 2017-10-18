@@ -8,8 +8,8 @@
 #ifndef MENU_H
 #define MENU_H 1
 
-int Menu_Prompt_Int(const char *title);
-char Menu_Prompt_Char(const char *title, const char *choices, char begin,
+int Menu_Prompt_Int(char const *title);
+int Menu_Prompt_Char(char const *title, char const *choices, char begin,
                       char end);
 
 #endif
