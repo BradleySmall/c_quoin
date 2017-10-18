@@ -24,10 +24,10 @@ typedef struct Transport_Pass {
     TransType trans;
 } Pass;
 
-int Pass_Buy(Pass *pass, const UserType user, const TermType term,
-             const TransType trans, const int amount, const time_t expires);
-bool Pass_Use(Pass *pass, const TransType trans);
-int Pass_Check(const Pass *pass);
+int Pass_Buy(Pass *pass, UserType user, TermType term, TransType trans,
+             int amount, time_t expires);
+bool Pass_Use(Pass *pass, TransType trans);
+int Pass_Check(Pass const *pass);
 int get_next_id(void);
 
 #endif

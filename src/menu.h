@@ -8,8 +8,8 @@
 #ifndef C_QUOIN_MENU_H
 #define C_QUOIN_MENU_H 1
 
-int Menu_Prompt_Int(const char *title);
-char Menu_Prompt_Char(const char *title, const char *choices, const char begin,
-                      const char end);
+int Menu_Prompt_Int(char const *title);
+char Menu_Prompt_Char(char const *title, char const *choices, char begin,
+                      char end);
 
 #endif

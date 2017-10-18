@@ -16,7 +16,7 @@
  * Returns the numeric value
  */
 
-int Menu_Prompt_Int(const char *title) {
+int Menu_Prompt_Int(char const *title) {
     int entry = -1;
     int retval = 0;
     int c = '\0';
@@ -44,8 +44,8 @@ int Menu_Prompt_Int(const char *title) {
  *
  * This also clears the stdin including the \n.
  */
-char Menu_Prompt_Char(const char *title, const char *choices, const char begin,
-                      const char end) {
+char Menu_Prompt_Char(char const *title, char const *choices, char const begin,
+                      char const end) {
     int entry = begin - 1;
     int c = '\0';
 

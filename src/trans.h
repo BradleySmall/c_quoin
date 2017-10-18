@@ -45,7 +45,7 @@ typedef enum _TransType {
 
 } TransType;
 
-int Trans_Ride_Rate(const TransType trans, const UserType user);
-int Trans_Month_Rate(const TransType trans, const UserType user, const int dom);
+int Trans_Ride_Rate(TransType trans, UserType user);
+int Trans_Month_Rate(TransType trans, UserType user, int dom);
 
 #endif

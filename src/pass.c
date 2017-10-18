@@ -12,7 +12,7 @@
  * returns the id of the newly created Pass
  */
 int Pass_Buy(Pass *pass, const UserType user, const TermType term,
-             const TransType trans, const int amount, const time_t expires) {
+             TransType const trans, int const amount, time_t const expires) {
     pass->balance = amount;
     pass->trans = trans;
     pass->term = term;
@@ -31,7 +31,7 @@ int Pass_Buy(Pass *pass, const UserType user, const TermType term,
  * but the version below shows that when written that way, this is more
  * readable, and maintainable.
  */
-bool Pass_Use(Pass *pass, const TransType trans) {
+bool Pass_Use(Pass *pass, TransType const trans) {
     /***** SPECIAL CASE FOR WORKERS ****/
     if (pass->user == USERTYPE_WORKER) {
         /* short circuit for workers */
@@ -71,7 +71,7 @@ bool Pass_Use(Pass *pass, const TransType trans) {
  * Simply returns the balance. This may be a bit lacking in functionality
  * but it is as specified.
  */
-int Pass_Check(const Pass *pass) { return pass->balance; }
+int Pass_Check(Pass const *pass) { return pass->balance; }
 
 /* Gets an ordinal id for the Pass id's. It is utilitarian and would more likely
  * be a call to a database or algorithmic method of establishing card id's.

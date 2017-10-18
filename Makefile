@@ -10,8 +10,9 @@
 
 OUTDIR=build
 SRCDIR=src
-DEPS=$(wildcard Makefile $(SRCDIR)/*.h)
+HDRS=$(wildcard $(SRCDIR)/*.h)
 SRCS=$(wildcard $(SRCDIR)/*.c)
+DEPS=$(HDRS) $(SRCS) Makefile
 PROJ=$(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 RBINDIR := $(OUTDIR)/release/bin
 DBINDIR := $(OUTDIR)/debug/bin
@@ -34,7 +35,7 @@ release : OBJS   = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 release : CFLAGS = -std='c11' -O2 -Wall -Wextra
 release : BIN    = $(RBINDIR)/$(PROJ)
 
-TIDY=/usr/bin/clang-tidy
+TIDY=/usr/bin/clang-tidy -checks='*, -llvm-header-guard' 
 
 .PHONY : all debug release tidy
 
@@ -47,9 +48,9 @@ debug : $$(BIN)
 
 release : $$(BIN) 
 
-tidy : $(SRCS) $(DEPS) 
+tidy : $(SRCS) $(HDRS)
 	#| compile_commands.json
-	$(TIDY) $^ -- $(CPPFLAGS)
+	$(TIDY)  $^ -- $(CPPFLAGS)
 
 compile_commands.json : $(SRCS)
 	bear make 
