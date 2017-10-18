@@ -5,8 +5,8 @@
  * Holds the prototypes for Menu functionality. There is no Type definition to
  * support
  */
-#ifndef MENU_H
-#define MENU_H 1
+#ifndef C_QUOIN_MENU_H
+#define C_QUOIN_MENU_H 1
 
 int Menu_Prompt_Int(const char *title);
 char Menu_Prompt_Char(const char *title, const char *choices, const char begin,

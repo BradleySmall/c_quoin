@@ -6,8 +6,8 @@
  *
  * holds the prototypes
  */
-#ifndef PASS_H
-#define PASS_H 1
+#ifndef C_QUOIN_PASS_H
+#define C_QUOIN_PASS_H 1
 
 #include "term.h"
 #include "trans.h"

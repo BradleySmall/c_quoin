@@ -8,11 +8,11 @@
 .SECONDARY :
 .DELETE_ON_ERROR:
 
-DEPS=$(wildcard Makefile src/*.h)
-SRCS=$(wildcard src/*.c)
-PROJ=$(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 OUTDIR=build
 SRCDIR=src
+DEPS=$(wildcard Makefile $(SRCDIR)/*.h)
+SRCS=$(wildcard $(SRCDIR)/*.c)
+PROJ=$(notdir $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 RBINDIR := $(OUTDIR)/release/bin
 DBINDIR := $(OUTDIR)/debug/bin
 ROBJDIR := $(OUTDIR)/release/tmp/bin
@@ -47,8 +47,9 @@ debug : $$(BIN)
 
 release : $$(BIN) 
 
-tidy : $(SRCS) | compile_commands.json
-	$(TIDY) $^
+tidy : $(SRCS) $(DEPS) 
+	#| compile_commands.json
+	$(TIDY) $^ -- $(CPPFLAGS)
 
 compile_commands.json : $(SRCS)
 	bear make 

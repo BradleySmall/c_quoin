@@ -4,8 +4,8 @@
  *
  * holds the prototypes for the application proper
  */
-#ifndef APP_TRANSPORT_H
-#define APP_TRANSPORT_H 1
+#ifndef C_QUOIN_APP_TRANSPORT_H
+#define C_QUOIN_APP_TRANSPORT_H 1
 
 void Buy_A_Pass(void);
 void Use_A_Pass(void);
