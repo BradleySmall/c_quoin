@@ -15,8 +15,8 @@
  * Holds the function prototypes
  *
  */
-#ifndef TRANS_H
-#define TRANS_H 1
+#ifndef C_QUOIN_TRANS_H
+#define C_QUOIN_TRANS_H 1
 
 #include "user.h"
 

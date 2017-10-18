@@ -4,8 +4,8 @@
  *
  * Holds the type definition for UserType
  */
-#ifndef USER_H
-#define USER_H 1
+#ifndef C_QUOIN_USER_H
+#define C_QUOIN_USER_H 1
 
 typedef enum _UserType {
     USERTYPE_WORKER = 0,

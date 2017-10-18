@@ -6,8 +6,8 @@
  *
  * holds the prototypes
  */
-#ifndef PASS_H
-#define PASS_H 1
+#ifndef C_QUOIN_PASS_H
+#define C_QUOIN_PASS_H 1
 
 #include "term.h"
 #include "trans.h"
@@ -24,8 +24,8 @@ typedef struct Transport_Pass {
     TransType trans;
 } Pass;
 
-int Pass_Buy(Pass *pass, UserType user, TermType term,
-             TransType trans, int amount, time_t expires);
+int Pass_Buy(Pass *pass, UserType user, TermType term, TransType trans,
+             int amount, time_t expires);
 bool Pass_Use(Pass *pass, TransType trans);
 int Pass_Check(Pass const *pass);
 int get_next_id(void);

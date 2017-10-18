@@ -5,8 +5,8 @@
  * Holds the type definition for the Term Type (terms of pass)
  *
  */
-#ifndef TERM_H
-#define TERM_H 1
+#ifndef C_QUOIN_TERM_H
+#define C_QUOIN_TERM_H 1
 
 typedef enum _TermType {
     TERMTYPE_WORKER = 0,
